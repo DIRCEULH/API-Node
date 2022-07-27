@@ -13,5 +13,12 @@ const router = express.Router()
     const returnDb = db.deleteProducts(id)
     res.status(200).send(returnDb + '-' + id)
   })
+
+  router.delete('/description', function (req, res) {
+    const id = req.query.id
+    const pr_descri = req.query.description
+    const returnDb = db.updateProducts(id, pr_descri)
+    res.status(200).send(returnDb)
+  })
 })()
 module.exports = router

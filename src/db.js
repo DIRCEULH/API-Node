@@ -15,7 +15,7 @@ connect()
 async function selectProducts() {
   const conn = await connect()
   const [rows] = await conn.query(
-    'SELECT * FROM tb_produto WHERE pr_codpro < 600'
+    'SELECT * FROM tb_produto WHERE pr_codpro < 700'
   )
   return rows
 }
@@ -32,6 +32,14 @@ async function deleteProducts(pr_codpro) {
     `DELETE FROM tb_produto WHERE pr_codpro = ${pr_codpro}`
   )
 
-  return 'Deletado com sucesso.' + rows1
+  return 'Deletado com sucesso.' + rows1 + rows2 + rows3
 }
-module.exports = { selectProducts, deleteProducts }
+
+async function updateProducts(pr_codpro, pr_descri) {
+  const connu = await connect()
+  const [rowsu] = await connu.query(
+    `UPDATE tb_produto SET pr_descri = '${pr_descri}' WHERE pr_codpro = ${pr_codpro}`
+  )
+  return 'Alterado com sucesso.' + rowsu
+}
+module.exports = { selectProducts, deleteProducts, updateProducts }
