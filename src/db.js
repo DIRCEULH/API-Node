@@ -22,7 +22,6 @@ async function deleteProducts(id) {
 }
 
 async function updateProducts(id, content) {
-  console.log('Dirceu', content)
   const row = await prisma.produto.update({
     where: {
       id: +id
