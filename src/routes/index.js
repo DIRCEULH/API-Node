@@ -20,5 +20,11 @@ const router = express.Router()
     const returnDb = db.updateProducts(id, pr_descri)
     res.status(200).send(returnDb)
   })
+
+  router.post('/insertProduct/:quanty/:description', function (req, res) {
+    const { quanty, description } = req.params
+    const returnDb = db.insertProducts(quanty, description)
+    res.status(200).send(returnDb)
+  })
 })()
 module.exports = router

@@ -33,8 +33,18 @@ async function updateProducts(id, content) {
   return 'Alterado com sucesso.' + row
 }
 
+async function insertProducts(quanty, content) {
+  const row = await prisma.produto.create({
+    data: {
+      quanty: +quanty,
+      content
+    }
+  })
+  return 'Inserido com sucesso.' + row
+}
+
 /**
- * conexão direto no banco sql
+ * conexão direto no banco mysql
  */
 
 // async function connect() {
@@ -83,4 +93,10 @@ async function updateProducts(id, content) {
 //   return 'Alterado com sucesso.' + rowsu
 // }
 
-module.exports = { prisma, selectProducts, deleteProducts, updateProducts }
+module.exports = {
+  prisma,
+  selectProducts,
+  deleteProducts,
+  updateProducts,
+  insertProducts
+}
