@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@prisma/client": "^4.2.1",
     "axios": "^0.27.2",
     "cors": "^2.8.5",
     "date-fns": "^2.29.0",
@@ -28,5 +29,8 @@
   "homepage": "https://github.com/Dirceu102650/API-Node#readme",
   "bin": {
     "api-node": "bin/server.js"
+  },
+  "devDependencies": {
+    "prisma": "^4.2.1"
   }
 }
