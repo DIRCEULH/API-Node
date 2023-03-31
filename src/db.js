@@ -7,7 +7,6 @@ const prisma = new PrismaClient()
 
 async function selectProducts() {
   const rows = await prisma.produto.findMany()
-
   return rows
 }
 
@@ -17,7 +16,6 @@ async function deleteProducts(id) {
       id: +id
     }
   })
-
   return `Deletado com sucesso. ${row}`
 }
 
