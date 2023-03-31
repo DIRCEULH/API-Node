@@ -43,6 +43,7 @@ async function insertProducts(quanty, content) {
 
 /**
  * conexão direto no banco mysql
+ * Autor Dirceu Luis Heineck
  */
 
 // async function connect() {
