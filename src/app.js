@@ -2,7 +2,9 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 
-//Rotas
+/*
+* Rotas
+*/
 const index = require('./routes/index')
 const personRoute = require('./routes/personRoute')
 
