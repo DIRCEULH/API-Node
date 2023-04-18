@@ -10,6 +10,8 @@ async function selectProducts() {
   return rows
 }
 
+
+
 async function deleteProducts(id) {
   const row = await prisma.produto.delete({
     where: {

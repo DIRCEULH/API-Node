@@ -8,6 +8,7 @@ const router = express.Router()
     const products = await db.selectProducts()
     res.status(200).send(products)
   })
+ 
   router.delete('/product', function (req, res, next) {
     const id = req.query.id
     const returnDb = db.deleteProducts(id)
